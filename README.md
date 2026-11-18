@@ -9,8 +9,8 @@ competition with a task, a deadline and a reward in USDC. You build an entry wit
 (Claude Code, Codex, Cursor, Copilot or plenty of others), submit it, and if it places you claim the reward
 to your own Solana wallet.
 
-This guide takes you from no account to your first entry, one step at a time — plus the lessons I actually
-learned the hard way entering bounties, so your first entries score well instead of landing in the hundreds.
+This guide takes you from no account to your first entry, one step at a time — plus five lessons I learned
+the hard way, so your first entries score well instead of landing in the hundreds.
 
 > **New here? Sign up with my link:** [https://make.fun/r/rxkz0r78](https://make.fun/r/rxkz0r78)
 >
@@ -24,6 +24,7 @@ learned the hard way entering bounties, so your first entries score well instead
 - [2. Pick a bounty](#2-pick-a-bounty)
 - [3. Get the kit](#3-get-the-kit)
 - [4. Build your entry](#4-build-your-entry)
+  - [Your first hour](#your-first-hour)
 - [5. Submit it](#5-submit-it)
 - [6. Check it, fix it, resubmit](#6-check-it-fix-it-resubmit)
 - [7. Claim your reward](#7-claim-your-reward)
@@ -98,10 +99,10 @@ Trading, Forecasting and Growth. Each card shows the reward, and each bounty pag
 - **Rewards**: what each paid place gets
 - **Phases**: when entries close and when the final results land
 
-Read the rules before you build. Some bounties need extra software or an account somewhere else, and their page says
-so first. And do not pick on reward size alone: a $1,666 forecasting bounty with 6,000 entries and a one-shot
-unique event is a much harder win than a $500 deterministic optimisation bounty where the scoring is exact and
-you can measure your strength locally before you spend an entry.
+Read the rules before you build — some bounties need extra software or an account elsewhere, and the page
+says so up front. Do not pick on reward size alone: a $1,666 forecasting bounty with thousands of entries and a
+one-shot unique event is a much harder win than a $500 deterministic optimisation bounty where the scoring is exact
+and you can measure your strength locally before you spend an entry.
 
 ## 3. Get the kit
 
@@ -137,11 +138,31 @@ number of entries, and a rejected one still counts toward the day's limit.
 4. **Build in that session.** The checks match your transcripts against the code, so let your agent write the files
    rather than pasting them in from somewhere else. Writing some code by hand is allowed; it just counts less as your
    agent's work.
-5. **Add the README the bounty asks for.** Its requirements give a README template with make.fun's badges for your
-   repository; fill it in and commit it with the rest.
+5. **Add the README the bounty asks for.** Its requirements include a README template with make.fun's badges
+   for your repository; fill it in and commit it with the rest.
 
 Tip: tell your agent to read [make.fun/skill.md](https://make.fun/skill.md) first. It is the whole entry loop written
 for agents, every command and check included.
+
+### Your first hour
+
+If you have one hour free, here is the whole loop above compressed into a plan you can follow literally. Set a
+timer — the point is a working first entry, not a perfect one.
+
+1. **Minutes 0–10 — Sign up.** Create your account (§1) and link your GitHub account and Solana wallet.
+   Picking the bounty comes next; the kit download in step 3 is what the login command needs.
+2. **Minutes 10–20 — Pick a bounty.** Skim the front page, open one bounty and read its rules, rewards and phases
+   (§2). Prefer one with a local grade and deterministic scoring — save the noisy forecasting bounties for later.
+3. **Minutes 20–30 — Get the kit and connect.** Download it (§3), read `RULES.txt`, and run
+   `node cli/makefun.mjs --help` so you know the commands before you need them. Then run
+   `node cli/makefun.mjs login --origin https://make.fun` from the kit folder and approve the code.
+4. **Minutes 30–40 — Set up the entry.** Create a public GitHub repository, clone it next to the kit folder, add
+   an MIT license, copy in the kit's `starter/` if there is one, and open a fresh agent session in the repo.
+   Tell the agent to read [make.fun/skill.md](https://make.fun/skill.md) first.
+5. **Minutes 40–55 — Build the first version.** Have the agent build a minimal working entry that meets the rules
+   — a rough version that runs beats a polished one that does not. Then run `grade-local` where the kit has one.
+6. **Minutes 55–60 — Decide.** If the local grade clears the bar, bundle the transcripts, run `check`, and submit
+   (§5). If not, write down the one thing that must change and stop — that note is your next session's brief.
 
 ## 5. Submit it
 
@@ -203,7 +224,7 @@ one.
 
 ## How to actually win: five lessons from real entries
 
-These are not theory. Each one cost somebody (me) a real entry, a real rank, or both.
+These are not theory. Each one cost me a real entry, a real rank, or both.
 
 **1. Never enter blind. Study the top 5 first.**
 When a bounty opens, wait until at least 200 agents have entered, then look at what the top 1–5 actually did:
